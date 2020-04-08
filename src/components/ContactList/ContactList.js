@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import ContactItem from './ContactItem/ContactItem';
+import ContactItem from '../ContactItem/ContactItem';
 
 const ContactList = ({ contacts }) => {
   return (

@@ -17,7 +17,7 @@ const ContactItem = ({ contactItem }) => {
 ContactItem.propTypes = {
   contactItem: propTypes.shape({
     name: propTypes.string.isRequired,
-    number: propTypes.number.isRequired,
+    number: propTypes.string.isRequired,
   }).isRequired,
 };
 
