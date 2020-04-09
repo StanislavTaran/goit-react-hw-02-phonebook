@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
+import styles from './ContactForm.module.css';
 
 export default class ContactForm extends Component {
   static propTypes = {
@@ -42,23 +43,29 @@ export default class ContactForm extends Component {
       <div>
         <h2>{title}</h2>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor={this.InputNameId}>Name:</label>
-          <input
-            name="name"
-            id={this.InputNameId}
-            type="text"
-            onChange={this.handleChange}
-            value={name}
-          />
-          <label htmlFor={this.InputNuberId}>Number:</label>
-          <input
-            name="number"
-            id={this.InputNuberId}
-            type="number"
-            onChange={this.handleChange}
-            value={number}
-          />
-          <button type="submit">Add contact</button>
+          <div>
+            <label htmlFor={this.InputNameId}>Name:</label>
+            <input
+              name="name"
+              id={this.InputNameId}
+              type="text"
+              onChange={this.handleChange}
+              value={name}
+            />
+          </div>
+          <div>
+            <label htmlFor={this.InputNuberId}>Number:</label>
+            <input
+              name="number"
+              id={this.InputNuberId}
+              type="number"
+              onChange={this.handleChange}
+              value={number}
+            />
+          </div>
+          <button className={styles.button} type="submit">
+            Add contact
+          </button>
         </form>
       </div>
     );
