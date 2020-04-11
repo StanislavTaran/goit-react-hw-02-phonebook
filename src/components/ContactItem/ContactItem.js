@@ -4,6 +4,7 @@ import styles from './ContactItem.module.css';
 
 const ContactItem = ({ contactItem, onRemoveContact }) => {
   const { name, number } = contactItem;
+
   return (
     <div className={styles.container}>
       <p>

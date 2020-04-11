@@ -42,7 +42,9 @@ export default class App extends Component {
 
   removeContact = id => {
     this.setState(state => {
-      return { contacts: state.contacts.filter(item => item.id !== id) };
+      const contacts = state.contacts.filter(contact => contact.id !== id);
+      const filter = contacts.length > 1 ? state.filter : '';
+      return { contacts, filter };
     });
   };
 
@@ -55,6 +57,7 @@ export default class App extends Component {
 
   applyFilter() {
     const { contacts, filter } = this.state;
+
     return contacts.filter(item =>
       item.name.toLowerCase().includes(filter.toLowerCase()),
     );
@@ -63,7 +66,7 @@ export default class App extends Component {
   render() {
     const { contacts } = this.state;
 
-    const filteredContacts = this.applyFilter(contacts);
+    const filteredContacts = this.applyFilter();
 
     return (
       <>
